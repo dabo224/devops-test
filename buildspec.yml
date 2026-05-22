@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installation des dépendances..."
+
+  pre_build:
+    commands:
+      - echo "Phase de pré-build..."
+
+  build:
+    commands:
+      - echo "Build de l'application..."
+
+  post_build:
+    commands:
+      - echo "Build terminé avec succès"
+
+artifacts:
+  base-directory: dist
+  files:
+    - '**/*'
