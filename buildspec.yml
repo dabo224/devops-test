@@ -3,21 +3,21 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installation des dépendances..."
+      - echo "Installation..."
 
   pre_build:
     commands:
-      - echo "Phase de pré-build..."
+      - echo "Pré-build..."
 
   build:
     commands:
-      - echo "Build de l'application..."
+      - echo "Build..."
 
   post_build:
     commands:
-      - echo "Build terminé avec succès"
+      - echo "Déploiement vers S3..."
+      - aws s3 cp . s3://abd-devops/ --recursive
 
 artifacts:
-  base-directory: .
   files:
     - '**/*'
